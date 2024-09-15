@@ -57,7 +57,7 @@ if (GSL_FOUND)
 endif()
 
 add_subdirectory(test)
-
+# add_subdirectory(tools/qozc)
 install(TARGETS ${PROJECT_NAME} 
   EXPORT QoZTargets
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

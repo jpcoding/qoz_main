@@ -159,6 +159,7 @@ void compress(char *inPath, char *cmpPath, QoZ::Config conf) {
     QoZ::writefile(outputFilePath, bytes, outSize);
 
     printf("compression ratio = %.2f \n", conf.num * 1.0 * sizeof(T) / outSize);
+    printf("bit-rate  = %f\n", 8.0*outSize/conf.num);
     printf("compression time = %f\n", compress_time);
     printf("compressed data file = %s\n", outputFilePath);
 
@@ -504,7 +505,7 @@ int main(int argc, char *argv[]) {
         }
     }
     if (tuningTarget!= nullptr) {
-       
+               
         if (strcmp(tuningTarget, "PSNR") == 0) {
             conf.tuningTarget = QoZ::TUNING_TARGET_RD;
         }
